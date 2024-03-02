@@ -1,0 +1,71 @@
+/* fit the image to page view port */
+
+.carousel-item img {
+  max-height: 80vh;
+  width: auto;
+  margin: 0 auto;
+  /* Center the images horizontally */
+  display: block;
+  object-fit: contain;
+  /* Maintain aspect ratio of images */
+}
+
+
+/*header */
+.navbar-brand {
+  font-size: xx-large;
+}
+
+.nav-item {
+  font-size: x-large;
+}
+
+/* Sticky footer */
+.footer {
+  padding: 20px 0;
+  margin-top: auto;
+  /* Margin-top set to auto to push footer to bottom */
+}
+
+/*fix arrows*/
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 1rem;
+  height: 1.25rem;
+}
+
+
+/*pick font*/
+body {
+  font-family: 'Cormorant Garamond', serif;
+
+  /*Sticky responsive footer*/
+  min-height: 100vh;
+  /* Set minimum height of the body to 100% viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*instagram icon resize*/
+.fa-instagram {
+  font-size: large;
+}
+
+
+/*single page app*/
+/* Hide bio section by default */
+#bioSection {
+  display: none;
+
+  p {
+    font-size: x-large;
+  }
+}
+
+
+/*adjust the image size*/
+.profile-img {
+  max-width: 100%;
+  height: auto;
+}
