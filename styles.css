@@ -81,3 +81,13 @@ body {
 #navSection {
   text-align: center;
 }
+
+/* carosuel fade transition*/
+.carousel-item {
+  transition: transform 0.1s;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  transition: opacity 0s 0.1s;
+}
