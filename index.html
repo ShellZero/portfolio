@@ -17,9 +17,8 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        Harsha Pamu</a>
+    <div class="container" id="navSection">
+      <a class="navbar-brand" href="#">Harsha Pamu</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,10 +26,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#" active onclick="showHome()">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="showBio()">Biography</a>
+            <a class="nav-link" href="bio.html">Biography</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://www.instagram.com/shellzero" target="_blank"><i
@@ -60,27 +59,6 @@
       </button>
     </div>
   </div>
-
-  <div class="container mt-4" id="bioSection">
-    <div class="row">
-      <div class="col-lg-6 order-lg-1 col-md-12 order-md-2 text-center">
-        <img src="images/profile.jpg" alt="Profile Picture" class="profile-img img-fluid">
-      </div>
-      <div class="col-lg-6 order-lg-2 col-md-12 order-md-1">
-        <p>
-          Harsha is a street photographer based out of Los Angeles.
-          His photography predominantly focuses on the raw beauty of street scenes, embracing elements of minimalism,
-          chaos, and striking silhouettes.
-          His unique perspective has earned him widespread acclaim, landing him a coveted spot in prestigious LA art
-          shows and exhibitions across numerous galleries in the city.
-          Aside from photography he is a Cook and a Software Engineer.</br></br>
-          Continuing his exploration of streets, Harsha remains steadfast in his commitment to capturing the soul of
-          street photography, one frame at a time <i class="fa-solid fa-camera-retro"></i>
-        </p>
-      </div>
-    </div>
-  </div>
-
 
   <!-- Footer -->
   <footer class="footer mt-auto py-3">
@@ -133,20 +111,6 @@
     photos.forEach(function (photo) {
       addCarouselItem("images/" + photo, photo.caption);
     });
-  </script>
-
-  <script>
-    // Function to show home section and hide bio section
-    function showHome() {
-      document.getElementById('homeSection').style.display = 'block';
-      document.getElementById('bioSection').style.display = 'none';
-    }
-
-    // Function to show bio section and hide home section
-    function showBio() {
-      document.getElementById('homeSection').style.display = 'none';
-      document.getElementById('bioSection').style.display = 'block';
-    }
   </script>
 
 </body>
