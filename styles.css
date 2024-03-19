@@ -121,5 +121,6 @@ body {
   .navbar-toggler:focus {
     box-shadow: none !important;
     border: none;
+    color: black;
   }
 }
