@@ -18,15 +18,16 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container" id="navSection">
-      <a class="navbar-brand" href="#">Harsha Pamu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <a class="navbar-brand" href="index.html">Harsha Pamu</a>
+      <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times d-none"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html" active>Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="bio.html">Biography</a>
@@ -87,19 +88,7 @@
       var img = document.createElement('img');
       img.classList.add('d-block', 'w-100');
       img.setAttribute('src', imageSrc);
-
-      // var captionDiv = document.createElement('div');
-      // captionDiv.classList.add('carousel-caption', 'd-none', 'd-md-block');
-      // var captionTitle = document.createElement('h5');
-      // captionTitle.textContent = caption.title;
-      // var captionText = document.createElement('p');
-      // captionText.textContent = caption.text;
-
-      // captionDiv.appendChild(captionTitle);
-      // captionDiv.appendChild(captionText);
-
       carouselItem.appendChild(img);
-      // carouselItem.appendChild(captionDiv);
 
       carouselItems.appendChild(carouselItem);
     }
@@ -112,7 +101,21 @@
       addCarouselItem("images/" + photo, photo.caption);
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var navbarToggler = document.querySelector('.navbar-toggler');
+      var hamburgerIcon = navbarToggler.querySelector('.fa-bars');
+      var closeIcon = navbarToggler.querySelector('.fa-times');
+      var navbarCollapse = document.querySelector('.navbar-collapse');
 
+      navbarToggler.addEventListener('click', function () {
+        navbarCollapse.classList.toggle('show');
+        hamburgerIcon.classList.toggle('d-none');
+        closeIcon.classList.toggle('d-none');
+      });
+    });
+
+  </script>
 </body>
 
 </html>

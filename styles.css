@@ -91,3 +91,35 @@ body {
 .carousel-fade .active.carousel-item-end {
   transition: opacity 0s 0.1s;
 }
+
+@media (max-width: 991.98px) {
+
+  /* fix menu styling for mobile */
+  .navbar-toggler.collapsed .close-icon {
+    display: none;
+  }
+
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    display: inline;
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 60px;
+    /* Height of the navbar-brand */
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    /* Background color of the menu */
+    z-index: 1000;
+    padding-top: 60px;
+    /* Space for the navbar brand */
+  }
+
+  .navbar-toggler,
+  .navbar-toggler:focus {
+    box-shadow: none !important;
+    border: none;
+  }
+}

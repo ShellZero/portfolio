@@ -19,9 +19,10 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container" id="navSection">
       <a class="navbar-brand" href="index.html">Harsha Pamu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times d-none"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
@@ -71,7 +72,21 @@
   <!-- Bootstrap Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var navbarToggler = document.querySelector('.navbar-toggler');
+      var hamburgerIcon = navbarToggler.querySelector('.fa-bars');
+      var closeIcon = navbarToggler.querySelector('.fa-times');
+      var navbarCollapse = document.querySelector('.navbar-collapse');
 
+      navbarToggler.addEventListener('click', function () {
+        navbarCollapse.classList.toggle('show');
+        hamburgerIcon.classList.toggle('d-none');
+        closeIcon.classList.toggle('d-none');
+      });
+    });
+
+  </script>
 </body>
 
 </html>
