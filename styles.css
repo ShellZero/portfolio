@@ -9,7 +9,6 @@
   /* Maintain aspect ratio of images */
 }
 
-
 /*header */
 .navbar-brand {
   font-size: xx-large;
@@ -122,5 +121,18 @@ body {
     box-shadow: none !important;
     border: none;
     color: black;
+  }
+
+  .carousel-item img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .carousel-item {
+    height: 55vh;
+  }
+
+  .navbar{
+    padding: 5vw;
   }
 }
