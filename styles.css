@@ -45,17 +45,13 @@
 
 /*pick font*/
 body {
-  font-family: 'orpheuspro', 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond', serif;
 
   /*Sticky responsive footer*/
   min-height: 100vh;
   /* Set minimum height of the body to 100% viewport height */
   display: flex;
   flex-direction: column;
-}
-
-.navbar {
-  font-family: 'Cormorant Garamond', serif;
 }
 
 /*instagram icon resize*/
