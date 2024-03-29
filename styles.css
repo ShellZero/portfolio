@@ -45,7 +45,7 @@
 
 /*pick font*/
 body {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'orpheuspro', 'Cormorant Garamond', serif;
 
   /*Sticky responsive footer*/
   min-height: 100vh;
@@ -54,6 +54,9 @@ body {
   flex-direction: column;
 }
 
+.navbar {
+  font-family: 'Cormorant Garamond', serif;
+}
 
 /*instagram icon resize*/
 .fa-instagram {
@@ -132,7 +135,7 @@ body {
     height: 55vh;
   }
 
-  .navbar{
+  .navbar {
     padding: 5vw;
   }
 }
