@@ -1,0 +1,240 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   SHELLZERO PORTFOLIO — design system tokens (inlined)
+   Monochrome editorial system for Harsha Pamu / shellzero street photography.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Webfonts ─────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* ── Colors — monochrome ramp ──────────────────────────────────────── */
+  --sz-ink:        #0a0a0b;
+  --sz-ink-900:    #121214;
+  --sz-ink-800:    #1c1c1f;
+  --sz-ink-700:    #2a2a2e;
+  --sz-grey-600:   #44444a;
+  --sz-grey-500:   #6b6b72;
+  --sz-grey-400:   #94949b;
+  --sz-grey-300:   #bcbcc2;
+  --sz-grey-200:   #d9d9dd;
+  --sz-grey-100:   #ececee;
+  --sz-paper-50:   #f6f6f4;
+  --sz-paper:      #fbfbf9;
+  --sz-white:      #ffffff;
+  --sz-red:        #e4002b;
+  --sz-red-dim:    #b00021;
+
+  /* Semantic aliases — light (paper) context */
+  --sz-bg:             var(--sz-paper);
+  --sz-bg-raised:      var(--sz-white);
+  --sz-bg-sunken:      var(--sz-paper-50);
+  --sz-text:           var(--sz-ink);
+  --sz-text-muted:     var(--sz-grey-500);
+  --sz-text-faint:     var(--sz-grey-400);
+  --sz-border:         var(--sz-grey-200);
+  --sz-border-strong:  var(--sz-ink);
+  --sz-accent:         var(--sz-red);
+  --sz-focus:          var(--sz-red);
+  --sz-on-accent:      var(--sz-white);
+  --sz-scrim:          rgba(10, 10, 11, 0.55);
+  --sz-scrim-soft:     rgba(10, 10, 11, 0.28);
+  --sz-veil-paper:     rgba(251, 251, 249, 0.72);
+
+  /* ── Typography ────────────────────────────────────────────────────── */
+  --sz-font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sz-font-sans:    'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --sz-font-mono:    'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --sz-w-light:   300;
+  --sz-w-regular: 400;
+  --sz-w-medium:  500;
+  --sz-w-semi:    600;
+  --sz-w-bold:    700;
+
+  --sz-text-xs:    0.75rem;
+  --sz-text-sm:    0.875rem;
+  --sz-text-base:  1rem;
+  --sz-text-md:    1.125rem;
+  --sz-text-lg:    1.375rem;
+  --sz-text-xl:    1.75rem;
+  --sz-display-sm: clamp(2rem, 4vw, 3rem);
+  --sz-display-md: clamp(2.75rem, 7vw, 5rem);
+  --sz-display-lg: clamp(3.5rem, 12vw, 9rem);
+  --sz-display-xl: clamp(4.5rem, 18vw, 15rem);
+
+  --sz-leading-tight:   1.02;
+  --sz-leading-snug:    1.18;
+  --sz-leading-normal:  1.5;
+  --sz-leading-relaxed: 1.7;
+
+  --sz-track-tightest: -0.04em;
+  --sz-track-tight:    -0.02em;
+  --sz-track-normal:   0;
+  --sz-track-wide:     0.08em;
+  --sz-track-widest:   0.24em;
+
+  /* ── Spacing & Layout ───────────────────────────────────────────────── */
+  --sz-space-0:   0;
+  --sz-space-1:   4px;
+  --sz-space-2:   8px;
+  --sz-space-3:   12px;
+  --sz-space-4:   16px;
+  --sz-space-5:   24px;
+  --sz-space-6:   32px;
+  --sz-space-7:   48px;
+  --sz-space-8:   64px;
+  --sz-space-9:   96px;
+  --sz-space-10:  128px;
+  --sz-space-11:  192px;
+
+  --sz-radius-0:    0px;
+  --sz-radius-sm:   2px;
+  --sz-radius-md:   4px;
+  --sz-radius-pill: 999px;
+
+  --sz-gutter:   clamp(20px, 5vw, 80px);
+  --sz-maxw:     1440px;
+  --sz-maxw-prose: 62ch;
+  --sz-nav-h:    72px;
+  --sz-hairline: 1px;
+
+  /* ── Effects ────────────────────────────────────────────────────────── */
+  --sz-shadow-sm:  0 1px 2px rgba(10,10,11,0.06);
+  --sz-shadow-md:  0 8px 30px rgba(10,10,11,0.12);
+  --sz-shadow-lg:  0 24px 70px rgba(10,10,11,0.28);
+  --sz-ring: 0 0 0 2px var(--sz-bg), 0 0 0 4px var(--sz-focus);
+
+  --sz-ease:       cubic-bezier(0.22, 1, 0.36, 1);
+  --sz-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --sz-dur-fast:   180ms;
+  --sz-dur:        420ms;
+  --sz-dur-slow:   900ms;
+  --sz-dur-filmic: 1400ms;
+
+  --sz-img-filter:       grayscale(1) contrast(1.06);
+  --sz-img-filter-hover: grayscale(1) contrast(1.12) brightness(1.04);
+  --sz-blur:             saturate(0) blur(14px);
+}
+
+/* ── Dark (darkroom) context ─────────────────────────────────────────── */
+:root[data-theme="dark"],
+.sz-dark {
+  --sz-bg:             var(--sz-ink);
+  --sz-bg-raised:      var(--sz-ink-800);
+  --sz-bg-sunken:      #060607;
+  --sz-text:           var(--sz-paper);
+  --sz-text-muted:     var(--sz-grey-400);
+  --sz-text-faint:     var(--sz-grey-500);
+  --sz-border:         var(--sz-ink-700);
+  --sz-border-strong:  var(--sz-paper);
+  --sz-on-accent:      var(--sz-white);
+}
+
+/* ── Global reset & body ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--sz-ink);
+  color: var(--sz-paper);
+  font-family: var(--sz-font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: var(--sz-red); color: #fff; }
+a { color: inherit; }
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--sz-ink); }
+::-webkit-scrollbar-thumb { background: var(--sz-ink-700); }
+#root { min-height: 100vh; }
+
+/* ── Focus-visible — universal keyboard focus ring ───────────────────── */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--sz-focus);
+  outline-offset: 3px;
+  border-radius: var(--sz-radius-sm);
+}
+
+/* ── Skip-to-content link ────────────────────────────────────────────── */
+.sz-skip-link {
+  position: fixed;
+  top: -100%;
+  left: var(--sz-space-5);
+  z-index: 9999;
+  padding: 10px 20px;
+  background: var(--sz-accent);
+  color: var(--sz-on-accent);
+  font-family: var(--sz-font-sans);
+  font-size: var(--sz-text-sm);
+  font-weight: var(--sz-w-medium);
+  letter-spacing: var(--sz-track-wide);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--sz-radius-sm);
+  transition: top var(--sz-dur-fast) var(--sz-ease);
+}
+.sz-skip-link:focus-visible { top: var(--sz-space-5); outline-offset: 2px; }
+
+/* ── Nav link hover / focus ──────────────────────────────────────────── */
+.sz-nav-link { opacity: 0.78; transition: opacity var(--sz-dur-fast); }
+.sz-nav-link:hover, .sz-nav-link:focus-visible { opacity: 1; }
+
+/* ── Hero entrance animations ────────────────────────────────────────── */
+@keyframes szRise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+.sz-rise   { opacity: 0; animation: szRise 1.05s var(--sz-ease) forwards; }
+.sz-rise-1 { animation-delay: .12s; }
+.sz-rise-2 { animation-delay: .24s; }
+.sz-rise-3 { animation-delay: .38s; }
+
+/* ── Scroll reveal ───────────────────────────────────────────────────── */
+[data-reveal] { opacity: 0; transform: translateY(34px); transition: opacity .9s var(--sz-ease), transform .9s var(--sz-ease); }
+[data-reveal].is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sz-rise, [data-reveal] { animation: none !important; opacity: 1 !important; transform: none !important; }
+  html { scroll-behavior: auto; }
+  img { transition: none !important; }
+}
+
+/* ── Responsive layout overrides ────────────────────────────────────────── */
+
+/* Tablet / mobile — gallery columns collapse to full-width, grid gap tightens */
+@media (max-width: 900px) {
+  #work .sz-cell { grid-column: span 12 !important; }
+  .sz-gallery-grid { gap: var(--sz-space-4) !important; }
+}
+
+/* Tablet — bio switches to single column */
+@media (max-width: 860px) {
+  #bio .sz-bio-inner { grid-template-columns: 1fr !important; gap: var(--sz-space-7) !important; }
+  /* Cap the portrait height so it doesn't eat the entire viewport */
+  #bio figure img { max-height: min(480px, 65vw); object-position: top center; }
+}
+
+/* Small mobile (≤ 600px) — trim heavy vertical padding */
+@media (max-width: 600px) {
+  #work { padding-top: var(--sz-space-8) !important; padding-bottom: var(--sz-space-7) !important; }
+  #bio  { padding-top: var(--sz-space-8) !important; }
+  footer { padding-top: var(--sz-space-7) !important; }
+}
+
+/* Landscape mobile — hero min-height would overflow short viewports */
+@media (max-height: 500px) {
+  #top { min-height: 100vh !important; }
+  .sz-scroll-cue { display: none !important; }
+}
+
+/* ── Film grain overlay ──────────────────────────────────────────────── */
+.sz-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image:
+    repeating-radial-gradient(circle at 17% 37%, rgba(255,255,255,0.04) 0 1px, transparent 1px 2px),
+    repeating-radial-gradient(circle at 83% 19%, rgba(0,0,0,0.05) 0 1px, transparent 1px 3px);
+  background-size: 3px 3px, 4px 4px;
+}

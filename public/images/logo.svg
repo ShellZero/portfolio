@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="shellzero">
+  <title>shellzero — .sh mark (light)</title>
+  <rect x="13" y="13" width="74" height="74" rx="4" fill="none" stroke="#fbfbf9" stroke-width="4"></rect>
+  <circle cx="29" cy="62" r="5.2" fill="#e4002b"></circle>
+  <text x="58" y="52" text-anchor="middle" dominant-baseline="middle" font-family="&#39;Cormorant Garamond&#39;, Georgia, &#39;Times New Roman&#39;, serif" font-size="46" font-weight="600" fill="#fbfbf9">sh</text>
+</svg>
