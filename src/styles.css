@@ -180,6 +180,52 @@ a { color: inherit; }
 .sz-nav-link { opacity: 0.78; transition: opacity var(--sz-dur-fast); }
 .sz-nav-link:hover, .sz-nav-link:focus-visible { opacity: 1; }
 
+/* ── Mobile nav overlay ──────────────────────────────────────────────── */
+@keyframes szMnavIn { from { opacity: 0; } to { opacity: 1; } }
+.sz-mnav { animation: szMnavIn 0.25s var(--sz-ease) forwards; }
+
+.sz-mnav-item {
+  display: block; width: 100%; background: none; border: none; border-bottom: 1px solid var(--sz-ink-700);
+  padding: 22px 0; text-align: left; cursor: pointer;
+  color: var(--sz-paper);
+  font-family: var(--sz-font-display);
+  font-size: clamp(2.6rem, 11vw, 3.8rem);
+  font-weight: 400; letter-spacing: -0.02em; line-height: 1;
+  opacity: 0; transform: translateY(16px);
+  animation: szRise 0.5s var(--sz-ease) forwards;
+}
+.sz-mnav-item:hover { color: var(--sz-grey-300); }
+
+.sz-mnav-index {
+  display: block;
+  font-family: var(--sz-font-mono);
+  font-size: 10px;
+  letter-spacing: var(--sz-track-widest);
+  color: var(--sz-grey-500);
+  margin-bottom: 6px;
+}
+
+.sz-mnav-footer {
+  border-top: 1px solid var(--sz-ink-700);
+  padding-top: 28px;
+  opacity: 0; transform: translateY(16px);
+  animation: szRise 0.5s var(--sz-ease) forwards;
+}
+
+.sz-mnav-social {
+  display: inline-flex; align-items: center; gap: 12px;
+  color: var(--sz-grey-400);
+  font-family: var(--sz-font-mono);
+  font-size: 12px; letter-spacing: var(--sz-track-wide); text-transform: uppercase;
+  text-decoration: none;
+  transition: color var(--sz-dur-fast);
+}
+.sz-mnav-social:hover { color: var(--sz-paper); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sz-mnav, .sz-mnav-item, .sz-mnav-footer { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
 /* ── Hero entrance animations ────────────────────────────────────────── */
 @keyframes szRise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
 .sz-rise   { opacity: 0; animation: szRise 1.05s var(--sz-ease) forwards; }

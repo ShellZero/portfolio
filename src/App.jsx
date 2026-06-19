@@ -155,7 +155,6 @@ const HERO_IMAGES = [
   "14.webp",
   "29.webp",
   "25.webp",
-  "2.webp",
   "28.webp",
 ].map(img);
 
