@@ -245,27 +245,37 @@ a { color: inherit; }
 
 /* ── Responsive layout overrides ────────────────────────────────────────── */
 
-/* Tablet / mobile — gallery columns collapse to full-width, grid gap tightens */
+/* Tablet (≤900px): 2-column gallery, tighter gap */
 @media (max-width: 900px) {
-  #work .sz-cell { grid-column: span 12 !important; }
+  #work .sz-cell { grid-column: span 6 !important; }
   .sz-gallery-grid { gap: var(--sz-space-4) !important; }
 }
 
-/* Tablet — bio switches to single column */
+/* Tablet (≤860px): bio single-column, cap portrait height */
 @media (max-width: 860px) {
   #bio .sz-bio-inner { grid-template-columns: 1fr !important; gap: var(--sz-space-7) !important; }
-  /* Cap the portrait height so it doesn't eat the entire viewport */
   #bio figure img { max-height: min(480px, 65vw); object-position: top center; }
 }
 
-/* Small mobile (≤ 600px) — trim heavy vertical padding */
+/* Mobile (≤600px): full-width gallery, trim padding, stack footer */
 @media (max-width: 600px) {
+  #work .sz-cell { grid-column: span 12 !important; }
+  .sz-gallery-grid { gap: var(--sz-space-3) !important; }
   #work { padding-top: var(--sz-space-8) !important; padding-bottom: var(--sz-space-7) !important; }
   #bio  { padding-top: var(--sz-space-8) !important; }
   footer { padding-top: var(--sz-space-7) !important; }
+  .sz-bio-facts { gap: 24px !important; margin-top: 24px !important; }
+  .sz-footer-row { flex-direction: column !important; align-items: center !important; justify-content: flex-start !important; gap: 10px !important; text-align: center !important; }
+  .sz-footer-brand { flex-direction: column !important; align-items: center !important; gap: 6px !important; }
 }
 
-/* Landscape mobile — hero min-height would overflow short viewports */
+/* Small mobile (≤480px): shorter nav, hide lightbox side buttons */
+@media (max-width: 480px) {
+  :root { --sz-nav-h: 60px; }
+  .sz-lb-prev, .sz-lb-next { display: none !important; }
+}
+
+/* Landscape mobile — hero on short viewports */
 @media (max-height: 500px) {
   #top { min-height: 100vh !important; }
   .sz-scroll-cue { display: none !important; }

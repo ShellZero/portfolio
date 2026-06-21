@@ -27,7 +27,7 @@ export function Bio({ profileSrc }) {
           <h2 style={{ ...s.eyebrow, margin: 0, marginBottom: 24 }}>Biography</h2>
           <p style={s.lede}>Harsha Pamu is a street photographer based in Los Angeles, chasing the raw beauty of the street — minimalism, chaos, and striking silhouettes.</p>
           <p style={s.body}>His photography has earned a place in LA art shows and exhibitions across galleries in the city. Aside from photography he is a cook and a software engineer — and he remains committed to capturing the soul of the street, one frame at a time.</p>
-          <div style={s.facts}>
+          <div style={s.facts} className="sz-bio-facts">
             <div style={s.fact}><span style={s.fk}>Based in</span><span style={s.fv}>Los Angeles</span></div>
             <div style={s.fact}><span style={s.fk}>Medium</span><span style={s.fv}>28mm · Digital</span></div>
             {/* <div style={s.fact}><span style={s.fk}>Plates</span><span style={s.fv}>043</span></div> */}

@@ -189,7 +189,7 @@ const hS = {
     fontFamily: "var(--sz-font-display)",
     fontStyle: "italic",
     fontWeight: 400,
-    fontSize: "clamp(1.2rem,2.4vw,1.9rem)",
+    fontSize: "clamp(1.35rem, 3.5vw, 1.9rem)",
     color: "#ececed",
     marginTop: 18,
     textShadow: "0 1px 24px rgba(0,0,0,0.6)",
@@ -276,7 +276,7 @@ const fS = {
   big:   { fontFamily: "var(--sz-font-display)", fontSize: "var(--sz-display-md)", fontWeight: 500, letterSpacing: "var(--sz-track-tight)", lineHeight: 1, color: "var(--sz-paper)", margin: "0 0 40px" },
   row:   { display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 18, 
     // borderTop: "1px solid var(--sz-ink-700)",
-     paddingTop: 2 },
+    },
   small: { fontFamily: "var(--sz-font-mono)", fontSize: 11, letterSpacing: "var(--sz-track-wide)", textTransform: "uppercase", color: "var(--sz-text-faint)" },
 };
 
@@ -290,8 +290,8 @@ function Footer() {
             @shellzero
           </Button>
         </div> */}
-        <div style={fS.row}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <div style={fS.row} className="sz-footer-row">
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }} className="sz-footer-brand">
             <img src={img("logo.svg")} width="38" height="25" alt="shellzero" />
             <span style={fS.small}>© 2026 Harsha Pamu · All rights reserved</span>
           </div>

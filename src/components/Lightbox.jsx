@@ -95,6 +95,7 @@ export function Lightbox({ plates, index, onClose, onIndex }) {
           ref={prevRef}
           aria-label="Previous photo"
           onClick={() => onIndex((index - 1 + plates.length) % plates.length)}
+          className="sz-lb-prev"
           style={{ ...navBtn, left: 'var(--sz-gutter)' }}
         >
           <IconArrowLeft size={28} />
@@ -114,6 +115,7 @@ export function Lightbox({ plates, index, onClose, onIndex }) {
           ref={nextRef}
           aria-label="Next photo"
           onClick={() => onIndex((index + 1) % plates.length)}
+          className="sz-lb-next"
           style={{ ...navBtn, right: 'var(--sz-gutter)' }}
         >
           <IconArrow size={28} />
