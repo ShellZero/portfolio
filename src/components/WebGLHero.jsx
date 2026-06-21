@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 const VERT = `
   varying vec2 vUv;
@@ -48,8 +48,9 @@ const FRAG = `
 
 export function WebGLHero({ images = [], interval = 4600 }) {
   const canvasRef = useRef(null);
-  const reduce = typeof window !== 'undefined' &&
-    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const reduce =
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -68,50 +69,71 @@ export function WebGLHero({ images = [], interval = 4600 }) {
       t.colorSpace = THREE.SRGBColorSpace;
       return t;
     };
-    const load = (src) => new Promise((res) =>
-      loader.load(src, (t) => res(cfg(t)), undefined, () => res(null))
-    );
+    const load = (src) =>
+      new Promise((res) =>
+        loader.load(
+          src,
+          (t) => res(cfg(t)),
+          undefined,
+          () => res(null),
+        ),
+      );
 
     const uniforms = {
-      uTexA: { value: null }, uTexB: { value: null },
-      uAspA: { value: 1.5 }, uAspB: { value: 1.5 },
-      uRes:  { value: new THREE.Vector2(1, 1) },
-      uProgress: { value: 0 }, uTime: { value: 0 }, uZoom: { value: 1.0 },
-      uMouse:  { value: new THREE.Vector2(0, 0) },
+      uTexA: { value: null },
+      uTexB: { value: null },
+      uAspA: { value: 1.5 },
+      uAspB: { value: 1.5 },
+      uRes: { value: new THREE.Vector2(1, 1) },
+      uProgress: { value: 0 },
+      uTime: { value: 0 },
+      uZoom: { value: 1.0 },
+      uMouse: { value: new THREE.Vector2(0, 0) },
       uReduce: { value: reduce ? 1 : 0 },
     };
-    const mat  = new THREE.ShaderMaterial({ uniforms, vertexShader: VERT, fragmentShader: FRAG });
+    const mat = new THREE.ShaderMaterial({ uniforms, vertexShader: VERT, fragmentShader: FRAG });
     const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), mat);
     scene.add(mesh);
 
     const aspectOf = (t) => (t?.image ? t.image.width / t.image.height : 1.5);
 
     const resize = () => {
-      const w = canvas.clientWidth, h = canvas.clientHeight;
+      const w = canvas.clientWidth,
+        h = canvas.clientHeight;
       renderer.setSize(w, h, false);
       uniforms.uRes.value.set(w, h);
     };
-    window.addEventListener('resize', resize);
+    window.addEventListener("resize", resize);
 
     const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
     const onMove = (e) => {
       mouse.tx = (e.clientX / window.innerWidth - 0.5) * 2;
       mouse.ty = (e.clientY / window.innerHeight - 0.5) * 2;
     };
-    window.addEventListener('mousemove', onMove);
+    window.addEventListener("mousemove", onMove);
 
-    let raf, running = true, idx = 0, transition = null;
+    let raf,
+      running = true,
+      idx = 0,
+      transition = null;
     const cache = [];
     const TRANS = reduce ? 1100 : 1500;
 
     (async () => {
       cache[0] = await load(images[0]);
-      uniforms.uTexA.value = cache[0]; uniforms.uAspA.value = aspectOf(cache[0]);
+      uniforms.uTexA.value = cache[0];
+      uniforms.uAspA.value = aspectOf(cache[0]);
       cache[1 % images.length] = await load(images[1 % images.length]);
-      uniforms.uTexB.value = cache[1 % images.length]; uniforms.uAspB.value = aspectOf(cache[1 % images.length]);
+      uniforms.uTexB.value = cache[1 % images.length];
+      uniforms.uAspB.value = aspectOf(cache[1 % images.length]);
       resize();
-      canvas.style.opacity = '1';
-      images.forEach((src, i) => { if (!cache[i]) load(src).then((t) => { cache[i] = t; }); });
+      canvas.style.opacity = "1";
+      images.forEach((src, i) => {
+        if (!cache[i])
+          load(src).then((t) => {
+            cache[i] = t;
+          });
+      });
     })();
 
     let lastAdvance = performance.now();
@@ -136,7 +158,7 @@ export function WebGLHero({ images = [], interval = 4600 }) {
       }
       if (transition) {
         const p = Math.min((now - transition.t0) / TRANS, 1);
-        uniforms.uProgress.value = p < 0.5 ? 2*p*p : 1 - Math.pow(-2*p+2,2)/2;
+        uniforms.uProgress.value = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
         if (p >= 1) {
           idx = transition.to;
           uniforms.uTexA.value = uniforms.uTexB.value;
@@ -150,22 +172,26 @@ export function WebGLHero({ images = [], interval = 4600 }) {
       raf = requestAnimationFrame(frame);
     };
 
-    canvas.style.transition = 'opacity 1.2s ease';
-    canvas.style.opacity = '0';
+    canvas.style.transition = "opacity 1.2s ease";
+    canvas.style.opacity = "0";
     raf = requestAnimationFrame(frame);
 
     return () => {
-      running = false; cancelAnimationFrame(raf);
-      window.removeEventListener('resize', resize);
-      window.removeEventListener('mousemove', onMove);
-      mesh.geometry.dispose(); mat.dispose();
+      running = false;
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", onMove);
+      mesh.geometry.dispose();
+      mat.dispose();
       cache.forEach((t) => t?.dispose());
       renderer.dispose();
     };
   }, [images, interval, reduce]);
 
   return (
-    <canvas ref={canvasRef}
-      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
+    <canvas
+      ref={canvasRef}
+      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block" }}
+    />
   );
 }

@@ -4,8 +4,6 @@ import { WebGLHero } from "./components/WebGLHero.jsx";
 import { Gallery } from "./components/Gallery.jsx";
 import { Bio } from "./components/Bio.jsx";
 import { Lightbox } from "./components/Lightbox.jsx";
-import { Button } from "./components/Button.jsx";
-import { IconDown, IconArrowUpRight } from "./components/Icons.jsx";
 
 const base = import.meta.env.BASE_URL;
 const img = (file) => `${base}images/${file}`;
@@ -82,13 +80,7 @@ const CURATED = [
     ["Oculus, NYC", "f/8", "1/200s"],
     "Abstract ribs of light and shadow",
   ),
-  P(
-    5,
-    "5.webp",
-    "Low tide",
-    ["Santa Monica", "f/5.6", "1/500s"],
-    "Pier and gulls at blue hour",
-  ),
+  P(5, "5.webp", "Low tide", ["Santa Monica", "f/5.6", "1/500s"], "Pier and gulls at blue hour"),
   P(
     11,
     "11.webp",
@@ -103,13 +95,7 @@ const CURATED = [
     ["Venice Beach", "f/8", "1/640s"],
     "Lone figure beneath tall palms",
   ),
-  P(
-    2,
-    "2.webp",
-    "Still water",
-    ["Salton Sea", "f/11", "4s"],
-    "A small structure on a glassy lake",
-  ),
+  P(2, "2.webp", "Still water", ["Salton Sea", "f/11", "4s"], "A small structure on a glassy lake"),
   P(
     7,
     "7.webp",
@@ -117,13 +103,7 @@ const CURATED = [
     ["Old Delhi", "f/5.6", "1/1250s"],
     "Children crossing a field as kites wheel overhead",
   ),
-  P(
-    9,
-    "9.webp",
-    "Quiet hours",
-    ["Seattle", "f/4", "1/90s"],
-    "Sunlit room of tall windows",
-  ),
+  P(9, "9.webp", "Quiet hours", ["Seattle", "f/4", "1/90s"], "Sunlit room of tall windows"),
   P(
     14,
     "14.webp",
@@ -134,8 +114,8 @@ const CURATED = [
 ];
 
 const REST = [
-  1, 15, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
-  37, 38, 39, 40, 41, 42, 43,
+  1, 15, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
+  42, 43,
 ].map((n) =>
   P(
     n,
@@ -148,15 +128,9 @@ const REST = [
 
 const PLATES = [...CURATED, ...REST];
 
-const HERO_IMAGES = [
-  "1.webp",
-  "30.webp",
-  "9.webp",
-  "14.webp",
-  "29.webp",
-  "25.webp",
-  "28.webp",
-].map(img);
+const HERO_IMAGES = ["1.webp", "30.webp", "9.webp", "14.webp", "29.webp", "25.webp", "28.webp"].map(
+  img,
+);
 
 const hS = {
   wrap: {
@@ -176,15 +150,6 @@ const hS = {
     padding: "0 var(--sz-gutter) clamp(48px,9vh,110px)",
     pointerEvents: "none",
   },
-  eyebrow: {
-    fontFamily: "var(--sz-font-mono)",
-    fontSize: 12,
-    letterSpacing: "var(--sz-track-widest)",
-    textTransform: "uppercase",
-    color: "#ffffff",
-    marginBottom: 24,
-    textShadow: "0 1px 3px rgba(0,0,0,0.95), 0 2px 12px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.7)",
-  },
   sub: {
     fontFamily: "var(--sz-font-display)",
     fontStyle: "italic",
@@ -194,24 +159,9 @@ const hS = {
     marginTop: 18,
     textShadow: "0 1px 24px rgba(0,0,0,0.6)",
   },
-  cue: {
-    position: "absolute",
-    left: "var(--sz-gutter)",
-    bottom: 22,
-    display: "flex",
-    alignItems: "center",
-    gap: 10,
-    fontFamily: "var(--sz-font-mono)",
-    fontSize: 10,
-    letterSpacing: "var(--sz-track-widest)",
-    textTransform: "uppercase",
-    color: "#e2e2e4",
-    zIndex: 10,
-    textShadow: "0 1px 14px rgba(0,0,0,0.7)",
-  },
 };
 
-function Hero({ onNav }) {
+function Hero() {
   return (
     <header id="top" style={hS.wrap}>
       <WebGLHero images={HERO_IMAGES} />
@@ -228,76 +178,43 @@ function Hero({ onNav }) {
         <h1 className="sz-rise sz-rise-1" style={hS.sub}>
           A monochrome record of the street, unposed.
         </h1>
-     
-        {/* <div
-          className="sz-rise sz-rise-2"
-          style={{
-            marginTop: 38,
-            display: "flex",
-            gap: 14,
-            pointerEvents: "auto",
-            flexWrap: "wrap",
-          }}
-        >
-          <Button
-            variant="solid"
-            onClick={() => onNav("work")}
-            style={{
-              background: "var(--sz-paper)",
-              color: "var(--sz-ink)",
-              borderColor: "var(--sz-paper)",
-            }}
-          >
-            View the work
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() => onNav("bio")}
-            style={{
-              color: "var(--sz-paper)",
-              borderColor: "rgba(255,255,255,0.4)",
-            }}
-          >
-            About Harsha
-          </Button>
-        </div> */}
       </div>
-      {/* <div className="sz-scroll-cue" style={hS.cue}>
-        <IconDown size={14} aria-hidden /> Scroll
-      </div> */}
     </header>
   );
 }
 
 const fS = {
-  foot:  { background: "var(--sz-ink)", borderTop: "1px solid var(--sz-ink-700)", 
-    padding: "var(--sz-space-6) var(--sz-gutter) var(--sz-space-6)" },
-  inner: { maxWidth: "var(--sz-maxw)", margin: "0 auto" },
-  big:   { fontFamily: "var(--sz-font-display)", fontSize: "var(--sz-display-md)", fontWeight: 500, letterSpacing: "var(--sz-track-tight)", lineHeight: 1, color: "var(--sz-paper)", margin: "0 0 40px" },
-  row:   { display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 18, 
-    // borderTop: "1px solid var(--sz-ink-700)",
-    },
-  small: { fontFamily: "var(--sz-font-mono)", fontSize: 11, letterSpacing: "var(--sz-track-wide)", textTransform: "uppercase", color: "var(--sz-text-faint)" },
+  foot: {
+    background: "var(--sz-ink)",
+    borderTop: "1px solid var(--sz-ink-700)",
+    padding: "var(--sz-space-6) var(--sz-gutter) var(--sz-space-6)",
+  },
+  row: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
+    gap: 18,
+  },
+  small: {
+    fontFamily: "var(--sz-font-mono)",
+    fontSize: 11,
+    letterSpacing: "var(--sz-track-wide)",
+    textTransform: "uppercase",
+    color: "var(--sz-text-faint)",
+  },
 };
 
 function Footer() {
   return (
     <footer style={fS.foot}>
-      {/* <div style={fS.inner}>
-        <p style={fS.big}>Let's talk prints<br />&amp; commissions.</p>
-        <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 48 }}>
-          <Button variant="accent" href="https://www.instagram.com/shellzero" target="_blank" iconRight={<IconArrowUpRight size={15} />}>
-            @shellzero
-          </Button>
-        </div> */}
-        <div style={fS.row} className="sz-footer-row">
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }} className="sz-footer-brand">
-            <img src={img("logo.svg")} width="38" height="25" alt="shellzero" />
-            <span style={fS.small}>© 2026 Harsha Pamu · All rights reserved</span>
-          </div>
-          <span style={fS.small}>Made in monochrome</span>
+      <div style={fS.row} className="sz-footer-row">
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }} className="sz-footer-brand">
+          <img src={img("logo.svg")} width="38" height="25" alt="shellzero" />
+          <span style={fS.small}>© 2026 Harsha Pamu · All rights reserved</span>
         </div>
-      {/* </div> */}
+        <span style={fS.small}>Made in monochrome</span>
+      </div>
     </footer>
   );
 }
@@ -333,27 +250,24 @@ export default function App() {
     const el = document.getElementById(id);
     if (el)
       window.scrollTo({
-        top: el.getBoundingClientRect().top + window.scrollY - 40,
+        top: el.getBoundingClientRect().top + window.scrollY - 72,
         behavior: "smooth",
       });
   };
 
   return (
     <>
-      <a href="#main-content" className="sz-skip-link">Skip to content</a>
+      <a href="#main-content" className="sz-skip-link">
+        Skip to content
+      </a>
       <Nav onNav={scrollTo} />
-      <Hero onNav={scrollTo} />
+      <Hero />
       <main id="main-content">
         <Gallery plates={PLATES} onOpen={setLb} />
         <Bio profileSrc={img("profile.webp")} />
       </main>
       <Footer />
-      <Lightbox
-        plates={PLATES}
-        index={lb}
-        onClose={() => setLb(null)}
-        onIndex={setLb}
-      />
+      <Lightbox plates={PLATES} index={lb} onClose={() => setLb(null)} onIndex={setLb} />
     </>
   );
 }
