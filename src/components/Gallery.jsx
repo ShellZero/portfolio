@@ -61,7 +61,7 @@ export function Gallery({ plates, onOpen }) {
       <div style={s.head}>
         <div>
           <div style={s.eyebrow}>
-            Selected Work — {String(plates.length).padStart(2, "0")} plates
+            Selected Work
           </div>
           <h2 style={s.h2}>The street, unposed.</h2>
         </div>
