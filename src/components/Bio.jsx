@@ -98,7 +98,7 @@ export function Bio({ profileSrc }) {
           </div>
           <div style={{ marginTop: 40, display: "flex", gap: 14, flexWrap: "wrap" }}>
             <Button
-              variant="accent"
+              variant="darkAccent"
               href="https://www.instagram.com/shellzero"
               target="_blank"
               iconRight={<IconArrowUpRight size={15} />}

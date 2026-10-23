@@ -60,6 +60,11 @@ export function Button({
       color: "var(--sz-on-accent)",
       borderColor: "var(--sz-accent)",
     },
+     darkAccent: {
+      background: "var(--sz-ink)",
+      color: "var(--sz-on-accent)",
+      borderColor: "var(--sz-ink)",
+    },
   };
 
   const Tag = href ? "a" : as;
